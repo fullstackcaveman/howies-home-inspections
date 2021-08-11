@@ -347,7 +347,10 @@ body {
 body #header {
   display: flex;
   padding: 6px 10px;
-  max-width: 100%;
+  width: 98%;
+  position: fixed;
+  top: 0;
+  z-index: 10;
 }
 body #header .header-items {
   display: flex;
@@ -360,7 +363,13 @@ body #header .header-items .logo {
   margin: 0 10px;
 }
 body #header .header-items .logo img {
-  height: 50px;
+  height: 75px;
+}
+body #header .header-items .logo .light-logo.hidden {
+  display: none;
+}
+body #header .header-items .logo .dark-logo.hidden {
+  display: none;
 }
 body #header .header-items .menu .menu-items {
   display: flex;
@@ -375,16 +384,28 @@ body #header .header-items .menu .menu-items a {
 }
 body .hero-section {
   position: relative;
-  height: 93vh;
+  height: 100vh;
 }
 body .hero-section .overlay {
   height: 100%;
 }
 body .hero-section .overlay .image {
-  background-image: url("../images/hero-section.jpg");
+  background-image: url("../images/kitchen.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
+}
+body .hero-section .down-arrows {
+  font-size: 2.1rem;
+  z-index: 2;
+  margin: 50px 0;
+}
+body .hero-section .down-arrows a {
+  color: #029231;
+}
+body .hero-section .down-arrows a :hover {
+  cursor: pointer;
+  color: #fff;
 }
 body .hero-section .overlay:before {
   content: "";
@@ -392,14 +413,16 @@ body .hero-section .overlay:before {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: 1;
   height: 100%;
 }
 body .hero-section img {
   width: 100%;
+  margin-top: 100px;
 }
 body .hero-section .hero-section-content {
+  padding: 10px 0;
   width: 90%;
   text-align: center;
   content: "";
@@ -409,9 +432,13 @@ body .hero-section .hero-section-content {
   transform: translate(-50%, -50%);
   z-index: 2;
 }
+body .hero-section .hero-section-content img {
+  width: 300px;
+}
 body .hero-section .hero-section-content h1 {
   color: #029231;
   font-size: 5rem;
+  font-weight: bolder;
 }
 body .hero-section .hero-section-content h3 {
   color: #fff;
@@ -422,15 +449,50 @@ body .hero-section .hero-section-content button {
   font-size: 1.4rem;
   background-color: #029231;
   padding: 15px 25px;
-  border-radius: 5px;
-  margin-top: 30px;
+  border-radius: 3px;
+  margin: 15px 5px;
   border: none;
-  color: #fff;
   text-decoration: none;
+  color: #fff;
   cursor: pointer;
 }
 body .hero-section .hero-section-content button:hover {
-  background-color: #007c29;
+  background-color: #005f20;
+}
+body .about-howies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+body .about-howies h3 {
+  font-size: 2.5rem;
+  color: #029231;
+}
+body .about-howies .about-columns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+}
+body .about-howies .about-columns .about-howies-content {
+  padding: 20px;
+}
+body .about-howies .about-columns .about-howies-content .left-column {
+  display: flex;
+  flex-direction: column;
+}
+body .about-howies .about-columns .about-howies-content .left-column p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+body .about-howies .right-column {
+  padding: 20px;
+}
+body .about-howies .right-column img {
+  width: 200px;
 }
 
 /*# sourceMappingURL=styles.css.map */
