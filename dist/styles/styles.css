@@ -464,8 +464,9 @@ body .about-howies {
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  margin: 20px auto;
-  max-width: 1200px;
+  margin: 0 auto;
+  width: 98.7%;
+  background-color: #f3f3f3;
 }
 body .about-howies h3 {
   font-size: 2.5rem;
@@ -493,6 +494,18 @@ body .about-howies .right-column {
 }
 body .about-howies .right-column img {
   width: 200px;
+}
+body .services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  margin: 0 auto;
+  width: 98.7%;
+}
+body .services h3 {
+  font-size: 2.5rem;
+  color: #029231;
 }
 
 /*# sourceMappingURL=styles.css.map */
