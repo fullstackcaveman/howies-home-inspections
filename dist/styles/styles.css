@@ -341,53 +341,76 @@ template {
 body {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-family: "Abel", sans-serif;
   box-sizing: border-box;
+  width: 100vw;
+  overflow-x: hidden;
 }
-body #header {
+body header {
+  box-sizing: border-box;
   display: flex;
-  padding: 6px 10px;
-  width: 98%;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 10;
+  transition: all 0.3s ease-in-out;
 }
-body #header .header-items {
+body header.scrolled {
+  background-color: rgba(0, 0, 0, 0.897);
+}
+body header .header-items {
   display: flex;
-  width: 100%;
-  align-items: center;
-  text-align: center;
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-align: center;
 }
-body #header .header-items .logo {
+body header .header-items .logo {
+  display: flex;
+  justify-content: center;
+}
+body header .header-items .logo img {
+  transition: all 0.5s ease-in-out;
+  height: 75px;
   margin: 0 10px;
 }
-body #header .header-items .logo img {
-  height: 75px;
+body header .header-items .logo img.scrolled {
+  height: 40px;
 }
-body #header .header-items .logo .light-logo.hidden {
+body header .header-items .logo .light-logo.hidden {
   display: none;
 }
-body #header .header-items .logo .dark-logo.hidden {
+body header .header-items .logo .dark-logo.hidden {
   display: none;
 }
-body #header .header-items .menu .menu-items {
+body header .header-items .menu .menu-items {
   display: flex;
   list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
 }
-body #header .header-items .menu .menu-items a {
+body header .header-items .menu .menu-items a {
   color: #029231;
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: bolder;
   margin: 10px;
   text-decoration: none;
 }
 body .hero-section {
   position: relative;
   height: 100vh;
+  width: 100%;
 }
 body .hero-section .overlay {
   height: 100%;
+  width: 100%;
 }
 body .hero-section .overlay .image {
   background-image: url("../images/kitchen.jpg");
@@ -395,35 +418,23 @@ body .hero-section .overlay .image {
   background-size: cover;
   height: 100%;
 }
-body .hero-section .down-arrows {
-  font-size: 2.1rem;
-  z-index: 2;
-  margin: 50px 0;
-}
-body .hero-section .down-arrows a {
-  color: #029231;
-}
-body .hero-section .down-arrows a :hover {
-  cursor: pointer;
-  color: #fff;
-}
 body .hero-section .overlay:before {
-  content: "";
   position: absolute;
+  content: "";
   top: 0;
   left: 0;
-  width: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1;
   height: 100%;
-}
-body .hero-section img {
   width: 100%;
-  margin-top: 100px;
 }
 body .hero-section .hero-section-content {
-  padding: 10px 0;
-  width: 90%;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
   text-align: center;
   content: "";
   position: absolute;
@@ -432,32 +443,64 @@ body .hero-section .hero-section-content {
   transform: translate(-50%, -50%);
   z-index: 2;
 }
-body .hero-section .hero-section-content img {
-  width: 300px;
+body .hero-section .hero-section-content .image-container {
+  width: 100%;
 }
-body .hero-section .hero-section-content h1 {
+body .hero-section .hero-section-content .image-container img {
+  width: 250px;
+  margin-top: 100px;
+}
+body .hero-section .hero-section-content .title {
+  width: 100%;
+  padding: 10px;
+}
+body .hero-section .hero-section-content .title h1 {
   color: #029231;
   font-size: 5rem;
   font-weight: bolder;
+  width: 100%;
+  margin: 20px auto;
 }
-body .hero-section .hero-section-content h3 {
+body .hero-section .hero-section-content .sub-heading {
+  width: 100%;
+  padding: 10px;
+}
+body .hero-section .hero-section-content .sub-heading h3 {
   color: #fff;
   font-size: 2rem;
   font-weight: 500;
+  margin: 0;
 }
-body .hero-section .hero-section-content button {
+body .hero-section .hero-section-content .hero-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 50px;
+}
+body .hero-section .hero-section-content .hero-btn a button {
   font-size: 1.4rem;
   background-color: #029231;
   padding: 15px 25px;
   border-radius: 3px;
-  margin: 15px 5px;
   border: none;
   text-decoration: none;
   color: #fff;
   cursor: pointer;
 }
-body .hero-section .hero-section-content button:hover {
+body .hero-section .hero-section-content .hero-btn a button:hover {
   background-color: #005f20;
+}
+body .hero-section .hero-section-content .down-arrows {
+  font-size: 2.1rem;
+  z-index: 2;
+  margin: 50px 0;
+  padding: 10px;
+}
+body .hero-section .hero-section-content .down-arrows a {
+  color: #029231;
+}
+body .hero-section .hero-section-content .down-arrows a :hover {
+  cursor: pointer;
+  color: #fff;
 }
 body .about-howies {
   display: flex;
@@ -503,9 +546,70 @@ body .services {
   margin: 0 auto;
   width: 98.7%;
 }
-body .services h3 {
+body .services .services-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+body .services .services-container h3 {
   font-size: 2.5rem;
   color: #029231;
+}
+body .services .services-container .services-offered {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20 0;
+  margin: 0 50px;
+}
+body .services .services-container .services-offered .service {
+  position: relative;
+  margin: 0 25px;
+  padding: 50px 20px;
+  text-align: center;
+  max-width: 500px;
+}
+body .services .services-container .services-offered .service.inspection.service-image {
+  background-image: url("../images/hero-section.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+body .services .services-container .services-offered .service:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  height: 100%;
+}
+body .services .services-container .services-offered .service h4 {
+  font-size: 2rem;
+  color: #029231;
+  margin: 10px 0;
+  z-index: 100;
+}
+body .services .services-container .services-offered .service p {
+  font-size: 1.2rem;
+  z-index: 100;
+  color: #fff;
+}
+body .services .services-container .services-offered .service button {
+  font-size: 1.4rem;
+  background-color: #029231;
+  padding: 15px 25px;
+  border-radius: 3px;
+  margin: 15px 5px;
+  border: none;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+body .services .services-container .services-offered .service button:hover {
+  background-color: #005f20;
 }
 
 /*# sourceMappingURL=styles.css.map */

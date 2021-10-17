@@ -21,6 +21,7 @@
 			<div class="header-items">
 				<div class="logo">
 					<img
+						id="logo"
 						class="light-logo"
 						src="/dist/images/light_logo.png"
 						alt="Howie's Home Inspection"
@@ -43,29 +44,36 @@
 				</div>
 			</div>
 		</header>
-		<section class="hero-section">
+
+		<section class="hero-section" id="hero-section">
 			<div class="overlay">
 				<div class="image"></div>
-
-				<div class="hero-section-content">
+			</div>
+			<div class="hero-section-content">
+				<div class="image-container">
 					<img
 						src="./images/excellent-service-white.png"
 						alt="Excellent Service"
 					/>
+				</div>
+				<div class="title">
 					<h1>HOWIE'S HOME INSPECTIONS</h1>
+				</div>
+				<div class="sub-heading">
 					<h3>
 						A Professional Home Inspection Company Serving Ogden, UT And The
 						Surrounding Areas.
 					</h3>
+				</div>
 
+				<div class="hero-btn">
 					<a href="tel:3852254781"
 						><button>Click or Call Today (385) 225-4781</button></a
 					>
-					<div class="down-arrows">
-						<a href="/#about-howies"
-							><i class="fas fa-angle-double-down"></i
-						></a>
-					</div>
+				</div>
+
+				<div class="down-arrows">
+					<a href="/#/about-howies"><i class="fas fa-angle-double-down"></i></a>
 				</div>
 			</div>
 		</section>
@@ -92,7 +100,7 @@
 							our inspectors are licensed and insured with a track record of
 							honesty and integrity. Easy-to-read reports are delivered within
 							24 hours and will provide you with the knowledge you need to make
-							an informed purchasing decision
+							an informed purchasing decision.
 						</p>
 					</div>
 				</div>
@@ -105,7 +113,47 @@
 		<section id="services" class="services">
 			<div class="services-container">
 				<h3>SERVICES WE OFFER</h3>
+				<div class="services-offered">
+					<div class="service inspection">
+						<div class="inspection-service-image"></div>
+						<div class="inspection-service">
+							<h4>Residential Inspection</h4>
+							<p>
+								A residential home inspection will uncover hidden problems that
+								can be costly or pose a safety hazard to your family. We will
+								perform a complete and thorough home inspection and check all
+								major areas of your home.
+							</p>
+							<button>READ MORE</button>
+						</div>
+					</div>
+					<div class="service mold">
+						<div class="mold-service-image"></div>
+						<div class="mold-inspection">
+							<h4>Mold Inspection</h4>
+							<p>
+								Mold can cause health problems and homeowners often don’t even
+								know mold is present until they experience symptoms. We use
+								visual inspection as well as lab sampling to determine if there
+								is mold present in the home.
+							</p>
+							<button>READ MORE</button>
+						</div>
+					</div>
+					<div class="service radon">
+						<h4>Radon Inspection</h4>
+						<p>
+							Radon is recognized by the U.S. Surgeon General as a major safety
+							hazard and it’s the second leading cause of lung cancer in the
+							United States. We’ll use specialized equipment to detect radon
+							levels and alert you to any high readings that may pose a safety
+							hazard.
+						</p>
+						<button>READ MORE</button>
+					</div>
+				</div>
 			</div>
 		</section>
+		<script src="./js/jsFunctions.js"></script>
 	</body>
 </html>
