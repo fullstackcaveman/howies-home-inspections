@@ -28,7 +28,7 @@ html {
 			position: fixed;
 			top: 0;
 			left: 0;
-			z-index: 10;
+			z-index: 100;
 			transition: all 0.3s ease-in-out;
 
 			&.scrolled {
@@ -269,6 +269,7 @@ html {
 					font-size: 2.5rem;
 					color: $primary-green;
 					margin: 0;
+					margin-bottom: 50px;
 				}
 
 				.services-offered {
@@ -311,7 +312,7 @@ html {
 								left: 0;
 								height: 100%;
 								width: 100%;
-								z-index: 100;
+								z-index: 10;
 
 								.inspection-content {
 									display: flex;
@@ -397,7 +398,7 @@ html {
 								left: 0;
 								height: 100%;
 								width: 100%;
-								z-index: 100;
+								z-index: 10;
 
 								.mold-content {
 									display: flex;
@@ -483,7 +484,7 @@ html {
 								left: 0;
 								height: 100%;
 								width: 100%;
-								z-index: 100;
+								z-index: 10;
 
 								.radon-content {
 									display: flex;
@@ -558,6 +559,7 @@ html {
 		.what-we-inspect {
 			display: flex;
 			flex-direction: column;
+			justify-content: center;
 			align-items: center;
 			width: 100%;
 
@@ -569,31 +571,35 @@ html {
 			background-size: cover;
 
 			.inspect-container {
-				width: 100%;
+				width: 80%;
 				height: 100%;
 
 				.inspect-content {
 					display: flex;
-					justify-content: center;
+					justify-content: space-around;
 					align-items: center;
 					width: 100%;
 					height: 100%;
-					// background-color: rgba(0, 0, 0, 0.7);
 
 					.left-content {
 						display: flex;
 						flex-direction: column;
 						color: white;
+						width: 50%;
+						padding: 20px;
 					}
 
 					.right-content {
+						width: 50%;
+						padding: 20px;
+
 						.slideshow-container {
 							max-width: 1000px;
 							position: relative;
 							margin: auto;
 
 							.slides {
-								// display: none;
+								width: 100%;
 
 								&.fade {
 									-webkit-animation-name: fade;
@@ -604,6 +610,7 @@ html {
 
 								img {
 									height: 340px;
+									width: 100%;
 								}
 
 								.text {
@@ -643,6 +650,57 @@ html {
 									opacity: 1;
 								}
 							}
+						}
+					}
+				}
+			}
+		}
+
+		.schedule {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			width: 100%;
+			padding: 20px;
+			color: #fff;
+			background-color: $light-grey;
+
+			h3 {
+				font-size: 3rem;
+			}
+
+			.divider {
+				//
+			}
+
+			button {
+				//
+				a {
+					//
+				}
+			}
+		}
+
+		footer {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			text-align: center;
+			color: #fff;
+			width: 100%;
+			background-color: $dark-grey;
+
+			.right-footer {
+				p {
+					a {
+						color: #fff;
+						text-decoration: none;
+						transition: all 0.3s ease-in-out;
+
+						&:hover {
+							color: $primary-green;
 						}
 					}
 				}
