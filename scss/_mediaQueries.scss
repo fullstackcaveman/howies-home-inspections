@@ -1,0 +1,72 @@
+@media (max-width: 1149px) {
+	body {
+		.services {
+			.services-container {
+				.services-offered {
+					display: flex;
+					flex-direction: column;
+					.service {
+						&.inspection,
+						&.mold,
+						&.radon {
+							width: 75%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// Responsive menu here
+@media (max-width: 960px) {
+	body {
+		#hero-section {
+			.hero-section-content {
+				.image-container {
+					img {
+						width: 175px;
+					}
+				}
+			}
+		}
+
+		#about-howies {
+			.about-columns {
+				flex-direction: column;
+			}
+		}
+
+		.services {
+			.services-container {
+				.services-offered {
+					display: flex;
+					flex-direction: column;
+					.service {
+						&.inspection,
+						&.mold,
+						&.radon {
+							width: 75%;
+						}
+					}
+				}
+			}
+		}
+
+		#what-we-inspect {
+			.inspect-container {
+				width: 100%;
+				.inspect-content {
+					flex-direction: column;
+
+					.left-content,
+					.right-content {
+						width: 75%;
+					}
+				}
+			}
+		}
+	}
+}
+
+// #hero-section > div.hero-section-content > div.image-container > img

@@ -1,109 +1,12 @@
-// sass --watch scss/styles.scss:styles/styles.css
-
-*,
-*:before,
-*:after {
-	box-sizing: border-box;
-}
-
-@import 'normalize';
-@import 'variables';
-
 html {
 	body {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		font-family: $primary-font;
-		width: 100%;
-
-		header {
-			display: flex;
-			justify-content: space-between;
-			flex-direction: column;
-			align-items: center;
-			padding: 10px;
-			width: 100%;
-			position: fixed;
-			top: 0;
-			left: 0;
-			z-index: 100;
-			transition: all 0.3s ease-in-out;
-
-			&.scrolled {
-				background-color: rgba(0, 0, 0, 0.897);
-			}
-
-			.header-items {
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				width: 100%;
-				text-align: center;
-
-				.logo {
-					display: flex;
-					justify-content: center;
-
-					img {
-						transition: all 0.5s ease-in-out;
-						height: 75px;
-						margin: 0 10px;
-
-						&.scrolled {
-							height: 40px;
-						}
-					}
-
-					.light-logo {
-						&.hidden {
-							display: none;
-						}
-					}
-
-					.dark-logo {
-						&.hidden {
-							display: none;
-						}
-					}
-				}
-
-				.menu {
-					.menu-items {
-						display: flex;
-						list-style-type: none;
-						padding: 0;
-						margin: 10px 0;
-
-						a {
-							color: #fff;
-							font-size: 1.2rem;
-							font-weight: bolder;
-							margin: 10px;
-							text-decoration: none;
-							transition: all 0.3s ease-in-out;
-
-							&.active {
-								color: $primary-green;
-							}
-
-							&:hover {
-								color: $primary-green;
-							}
-						}
-					}
-				}
-			}
-		}
-
-		.hero-section {
+		.about-hero-section {
 			position: relative;
 			top: 0;
 			left: 0;
 			right: 0;
 			bottom: 0;
-			height: 100vh;
+			height: 330px;
 			width: 100%;
 
 			.overlay {
@@ -114,6 +17,7 @@ html {
 					background-image: url('/images/kitchen.jpg');
 					background-repeat: no-repeat;
 					background-size: cover;
+					background-position: center;
 					height: 100%;
 				}
 
@@ -131,19 +35,18 @@ html {
 				}
 			}
 
-			.hero-section-content {
+			.about-hero-section-content {
 				position: absolute;
-				content: '';
 				width: 100%;
 
-				.image-container {
-					width: 100%;
+				// .image-container {
+				// 	width: 100%;
 
-					img {
-						width: 250px;
-						margin-top: 100px;
-					}
-				}
+				// 	img {
+				// 		width: 250px;
+				// 		margin-top: 100px;
+				// 	}
+				// }
 
 				.title {
 					width: 100%;
@@ -158,17 +61,17 @@ html {
 					}
 				}
 
-				.sub-heading {
-					width: 100%;
-					padding: 20px;
+				// .sub-heading {
+				// 	width: 100%;
+				// 	padding: 20px;
 
-					h3 {
-						color: #fff;
-						font-size: 2rem;
-						font-weight: 500;
-						margin: 0;
-					}
-				}
+				// 	h3 {
+				// 		color: #fff;
+				// 		font-size: 2rem;
+				// 		font-weight: 500;
+				// 		margin: 0;
+				// 	}
+				// }
 
 				.hero-btn {
 					width: 100%;
@@ -738,28 +641,6 @@ html {
 			}
 		}
 
-		.scroll-top {
-			position: fixed;
-			bottom: 150px;
-			right: -5px;
-			background-color: rgba(0, 0, 0, 0.7);
-			padding: 20px;
-			border-radius: 5px;
-			color: #fff;
-			transition: all 0.5s ease-in-out;
-
-			&.hidden {
-				position: fixed;
-				bottom: 150px;
-				right: -55px;
-				opacity: 0;
-			}
-
-			&:hover {
-				cursor: pointer;
-			}
-		}
-
 		footer {
 			display: flex;
 			justify-content: space-around;
@@ -786,5 +667,4 @@ html {
 	}
 }
 
-@import 'about';
 @import 'mediaQueries';

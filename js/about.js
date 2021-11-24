@@ -1,8 +1,7 @@
 const header = document.getElementById('header');
-const heroSection = document.getElementById('hero-section');
+const heroSection = document.getElementById('about-hero-section');
 const logo = document.getElementById('logo');
 const menuLinks = document.getElementsByClassName('menu-link');
-const scrollDown = document.getElementById('scroll-down');
 const aboutHowies = document.getElementById('about-howies');
 const menuLinksArray = Array.from(document.getElementsByClassName('menu-link'));
 const scrollTop = document.getElementById('scroll-top');
@@ -36,33 +35,6 @@ const getMenuLinks = () => {
 };
 
 getMenuLinks();
-
-scrollDown.addEventListener('click', () => {
-	aboutHowies.scrollIntoView({ behavior: 'smooth', block: 'center' });
-});
-
-// Slideshow
-let slideIndex = 0;
-
-const showSlides = () => {
-	let i;
-	let slides = document.getElementsByClassName('slides');
-
-	for (i = 0; i < slides.length; i++) {
-		slides[i].style.display = 'none';
-	}
-
-	slideIndex++;
-	if (slideIndex > slides.length) {
-		slideIndex = 1;
-	}
-
-	slides[slideIndex - 1].style.display = 'block';
-
-	setTimeout(showSlides, 3000);
-};
-
-showSlides();
 
 scrollTop.addEventListener('click', () => {
 	heroSection.scrollIntoView({ behavior: 'smooth' });

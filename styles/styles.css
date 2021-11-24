@@ -400,11 +400,18 @@ html body header .header-items .menu .menu-items {
   margin: 10px 0;
 }
 html body header .header-items .menu .menu-items a {
-  color: #029231;
+  color: #fff;
   font-size: 1.2rem;
   font-weight: bolder;
   margin: 10px;
   text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+html body header .header-items .menu .menu-items a.active {
+  color: #029231;
+}
+html body header .header-items .menu .menu-items a:hover {
+  color: #029231;
 }
 html body .hero-section {
   position: relative;
@@ -458,6 +465,7 @@ html body .hero-section .hero-section-content .image-container img {
 }
 html body .hero-section .hero-section-content .title {
   width: 100%;
+  padding: 20px;
 }
 html body .hero-section .hero-section-content .title h1 {
   color: #029231;
@@ -468,6 +476,7 @@ html body .hero-section .hero-section-content .title h1 {
 }
 html body .hero-section .hero-section-content .sub-heading {
   width: 100%;
+  padding: 20px;
 }
 html body .hero-section .hero-section-content .sub-heading h3 {
   color: #fff;
@@ -542,14 +551,11 @@ html body .about-howies .right-column img {
   width: 200px;
 }
 html body .services {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
   padding: 20px;
+  width: 100%;
+  height: auto;
 }
 html body .services .services-container {
-  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -566,14 +572,16 @@ html body .services .services-container h3 {
 }
 html body .services .services-container .services-offered {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  height: 350px;
+  height: 100%;
   width: 100%;
 }
 html body .services .services-container .services-offered .service {
   position: relative;
   text-align: center;
+  width: 30%;
 }
 html body .services .services-container .services-offered .service:before {
   content: "";
@@ -586,8 +594,9 @@ html body .services .services-container .services-offered .service:before {
   height: 100%;
 }
 html body .services .services-container .services-offered .service.inspection {
-  width: 30%;
-  height: 100%;
+  min-width: 350px;
+  height: 450px;
+  margin: 10px;
 }
 html body .services .services-container .services-offered .service.inspection .inspection-service-image {
   background-image: url("/images/hero-section.jpg");
@@ -662,8 +671,9 @@ html body .services .services-container .services-offered .service.inspection .i
   display: inline;
 }
 html body .services .services-container .services-offered .service.mold {
-  width: 30%;
-  height: 100%;
+  min-width: 350px;
+  height: 450px;
+  margin: 10px;
 }
 html body .services .services-container .services-offered .service.mold .mold-service-image {
   background-image: url("/images/mold.jpg");
@@ -738,8 +748,9 @@ html body .services .services-container .services-offered .service.mold .mold-in
   display: inline;
 }
 html body .services .services-container .services-offered .service.radon {
-  width: 30%;
-  height: 100%;
+  min-width: 350px;
+  height: 450px;
+  margin: 10px;
 }
 html body .services .services-container .services-offered .service.radon .radon-service-image {
   background-image: url("/images/radon.jpg");
@@ -844,6 +855,14 @@ html body .what-we-inspect .inspect-container .inspect-content .left-content {
   width: 50%;
   padding: 20px;
 }
+html body .what-we-inspect .inspect-container .inspect-content .left-content h2 {
+  font-size: 2rem;
+  margin-top: 0;
+}
+html body .what-we-inspect .inspect-container .inspect-content .left-content p {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
 html body .what-we-inspect .inspect-container .inspect-content .right-content {
   width: 50%;
   padding: 20px;
@@ -865,6 +884,7 @@ html body .what-we-inspect .inspect-container .inspect-content .right-content .s
 html body .what-we-inspect .inspect-container .inspect-content .right-content .slideshow-container .slides img {
   height: 340px;
   width: 100%;
+  height: auto;
 }
 html body .what-we-inspect .inspect-container .inspect-content .right-content .slideshow-container .slides .text {
   color: #f2f2f2;
@@ -912,6 +932,61 @@ html body .schedule {
 }
 html body .schedule h3 {
   font-size: 3rem;
+  margin-bottom: 0;
+}
+html body .schedule .divider {
+  width: 100px;
+  border-bottom: 2px solid red;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+html body .schedule button {
+  font-size: 1.4rem;
+  font-weight: bold;
+  background-color: #029231;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  margin-bottom: 50px;
+  transition: all 0.3s ease-in-out;
+}
+html body .schedule button a {
+  color: #fff;
+  text-decoration: none;
+}
+html body .schedule button .right-arrows {
+  transition: all 0.3s ease-in-out;
+  display: none;
+}
+html body .schedule button:hover {
+  transition: all 0.3s ease-in-out;
+  background-color: #005f20;
+}
+html body .schedule button:hover .right-arrows {
+  display: inline;
+}
+html body .scroll-top {
+  position: fixed;
+  bottom: 150px;
+  right: -5px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 5px;
+  color: #fff;
+  transition: all 0.5s ease-in-out;
+}
+html body .scroll-top.hidden {
+  position: fixed;
+  bottom: 150px;
+  right: -55px;
+  opacity: 0;
+}
+html body .scroll-top:hover {
+  cursor: pointer;
 }
 html body footer {
   display: flex;
@@ -929,6 +1004,632 @@ html body footer .right-footer p a {
 }
 html body footer .right-footer p a:hover {
   color: #029231;
+}
+
+html body .about-hero-section {
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 330px;
+  width: 100%;
+}
+html body .about-hero-section .overlay {
+  height: 100%;
+  width: 100%;
+}
+html body .about-hero-section .overlay .image {
+  background-image: url("/images/kitchen.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+html body .about-hero-section .overlay:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+}
+html body .about-hero-section .about-hero-section-content {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+html body .about-hero-section .about-hero-section-content .title {
+  width: 100%;
+  padding: 20px;
+}
+html body .about-hero-section .about-hero-section-content .title h1 {
+  color: #029231;
+  font-size: 5rem;
+  font-weight: bolder;
+  width: 100%;
+  margin: 20px auto;
+}
+html body .about-hero-section .about-hero-section-content .hero-btn {
+  width: 100%;
+  margin-top: 50px;
+}
+html body .about-hero-section .about-hero-section-content .hero-btn a button {
+  font-size: 1.4rem;
+  background-color: #029231;
+  padding: 15px 25px;
+  border-radius: 3px;
+  border: none;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+html body .about-hero-section .about-hero-section-content .hero-btn a button:hover {
+  background-color: #005f20;
+}
+html body .about-hero-section .about-hero-section-content .down-arrows {
+  font-size: 2.1rem;
+  z-index: 2;
+  margin: 50px 0;
+  padding: 10px;
+}
+html body .about-hero-section .about-hero-section-content .down-arrows a {
+  color: #029231;
+}
+html body .about-hero-section .about-hero-section-content .down-arrows a :hover {
+  cursor: pointer;
+  color: #fff;
+}
+html body .about-howies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  margin: 0 auto;
+  width: 100%;
+  background-color: #f3f3f3;
+}
+html body .about-howies h3 {
+  font-size: 2.5rem;
+  color: #029231;
+}
+html body .about-howies .about-columns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+}
+html body .about-howies .about-columns .about-howies-content {
+  padding: 20px;
+}
+html body .about-howies .about-columns .about-howies-content .left-column {
+  display: flex;
+  flex-direction: column;
+}
+html body .about-howies .about-columns .about-howies-content .left-column p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+html body .about-howies .right-column {
+  padding: 20px;
+}
+html body .about-howies .right-column img {
+  width: 200px;
+}
+html body .services {
+  padding: 20px;
+  width: 100%;
+  height: auto;
+}
+html body .services .services-container {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  margin: 50px 0;
+}
+html body .services .services-container h3 {
+  font-size: 2.5rem;
+  color: #029231;
+  margin: 0;
+  margin-bottom: 50px;
+}
+html body .services .services-container .services-offered {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+html body .services .services-container .services-offered .service {
+  position: relative;
+  text-align: center;
+  width: 30%;
+}
+html body .services .services-container .services-offered .service:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  height: 100%;
+}
+html body .services .services-container .services-offered .service.inspection {
+  min-width: 350px;
+  height: 450px;
+  margin: 10px;
+}
+html body .services .services-container .services-offered .service.inspection .inspection-service-image {
+  background-image: url("/images/hero-section.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+html body .services .services-container .services-offered .service.inspection .inspection-service {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+html body .services .services-container .services-offered .service.inspection .inspection-service .inspection-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+}
+html body .services .services-container .services-offered .service.inspection .inspection-service .inspection-content h4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  width: 100%;
+  margin: 0;
+}
+html body .services .services-container .services-offered .service.inspection .inspection-service .inspection-content p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  font-size: 1.3rem;
+  z-index: 100;
+  color: #fff;
+  padding: 10px;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+html body .services .services-container .services-offered .service.inspection .inspection-service .inspection-content button {
+  font-size: 1.4rem;
+  font-weight: bold;
+  background-color: #029231;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+}
+html body .services .services-container .services-offered .service.inspection .inspection-service .inspection-content button .right-arrows {
+  transition: all 0.3s ease-in-out;
+  display: none;
+}
+html body .services .services-container .services-offered .service.inspection .inspection-service .inspection-content button:hover {
+  transition: all 0.3s ease-in-out;
+  background-color: #005f20;
+}
+html body .services .services-container .services-offered .service.inspection .inspection-service .inspection-content button:hover .right-arrows {
+  display: inline;
+}
+html body .services .services-container .services-offered .service.mold {
+  min-width: 350px;
+  height: 450px;
+  margin: 10px;
+}
+html body .services .services-container .services-offered .service.mold .mold-service-image {
+  background-image: url("/images/mold.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+html body .services .services-container .services-offered .service.mold .mold-inspection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+html body .services .services-container .services-offered .service.mold .mold-inspection .mold-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+}
+html body .services .services-container .services-offered .service.mold .mold-inspection .mold-content h4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  width: 100%;
+  margin: 0;
+}
+html body .services .services-container .services-offered .service.mold .mold-inspection .mold-content p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  font-size: 1.3rem;
+  z-index: 100;
+  color: #fff;
+  padding: 10px;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+html body .services .services-container .services-offered .service.mold .mold-inspection .mold-content button {
+  font-size: 1.4rem;
+  font-weight: bold;
+  background-color: #029231;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+}
+html body .services .services-container .services-offered .service.mold .mold-inspection .mold-content button .right-arrows {
+  transition: all 0.3s ease-in-out;
+  display: none;
+}
+html body .services .services-container .services-offered .service.mold .mold-inspection .mold-content button:hover {
+  transition: all 0.3s ease-in-out;
+  background-color: #005f20;
+}
+html body .services .services-container .services-offered .service.mold .mold-inspection .mold-content button:hover .right-arrows {
+  display: inline;
+}
+html body .services .services-container .services-offered .service.radon {
+  min-width: 350px;
+  height: 450px;
+  margin: 10px;
+}
+html body .services .services-container .services-offered .service.radon .radon-service-image {
+  background-image: url("/images/radon.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+html body .services .services-container .services-offered .service.radon .radon-inspection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+html body .services .services-container .services-offered .service.radon .radon-inspection .radon-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  transition: all 0.3s ease-in-out;
+}
+html body .services .services-container .services-offered .service.radon .radon-inspection .radon-content h4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  width: 100%;
+  margin: 0;
+}
+html body .services .services-container .services-offered .service.radon .radon-inspection .radon-content p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  font-size: 1.3rem;
+  z-index: 100;
+  color: #fff;
+  padding: 10px;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+html body .services .services-container .services-offered .service.radon .radon-inspection .radon-content button {
+  font-size: 1.4rem;
+  font-weight: bold;
+  background-color: #029231;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+}
+html body .services .services-container .services-offered .service.radon .radon-inspection .radon-content button .right-arrows {
+  transition: all 0.3s ease-in-out;
+  display: none;
+}
+html body .services .services-container .services-offered .service.radon .radon-inspection .radon-content button:hover {
+  transition: all 0.3s ease-in-out;
+  background-color: #005f20;
+}
+html body .services .services-container .services-offered .service.radon .radon-inspection .radon-content button:hover .right-arrows {
+  display: inline;
+}
+html body .what-we-inspect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-image: url("/images//contemporary-deck.jpg");
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+html body .what-we-inspect .inspect-container {
+  width: 80%;
+  height: 100%;
+}
+html body .what-we-inspect .inspect-container .inspect-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+html body .what-we-inspect .inspect-container .inspect-content .left-content {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 50%;
+  padding: 20px;
+}
+html body .what-we-inspect .inspect-container .inspect-content .left-content h2 {
+  font-size: 2rem;
+  margin-top: 0;
+}
+html body .what-we-inspect .inspect-container .inspect-content .left-content p {
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+html body .what-we-inspect .inspect-container .inspect-content .right-content {
+  width: 50%;
+  padding: 20px;
+}
+html body .what-we-inspect .inspect-container .inspect-content .right-content .slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+html body .what-we-inspect .inspect-container .inspect-content .right-content .slideshow-container .slides {
+  width: 100%;
+}
+html body .what-we-inspect .inspect-container .inspect-content .right-content .slideshow-container .slides.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+html body .what-we-inspect .inspect-container .inspect-content .right-content .slideshow-container .slides img {
+  height: 340px;
+  width: 100%;
+  height: auto;
+}
+html body .what-we-inspect .inspect-container .inspect-content .right-content .slideshow-container .slides .text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 4px;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+html body .what-we-inspect .inspect-container .inspect-content .right-content .slideshow-container .slides .numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+html body .schedule {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+  color: #fff;
+  background-color: #1e1e1e;
+}
+html body .schedule h3 {
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+html body .schedule .divider {
+  width: 100px;
+  border-bottom: 2px solid red;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+html body .schedule button {
+  font-size: 1.4rem;
+  font-weight: bold;
+  background-color: #029231;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10;
+  margin-bottom: 50px;
+  transition: all 0.3s ease-in-out;
+}
+html body .schedule button a {
+  color: #fff;
+  text-decoration: none;
+}
+html body .schedule button .right-arrows {
+  transition: all 0.3s ease-in-out;
+  display: none;
+}
+html body .schedule button:hover {
+  transition: all 0.3s ease-in-out;
+  background-color: #005f20;
+}
+html body .schedule button:hover .right-arrows {
+  display: inline;
+}
+html body footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  background-color: #171717;
+}
+html body footer .right-footer p a {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+html body footer .right-footer p a:hover {
+  color: #029231;
+}
+
+@media (max-width: 1149px) {
+  body .services .services-container .services-offered {
+    display: flex;
+    flex-direction: column;
+  }
+  body .services .services-container .services-offered .service.inspection, body .services .services-container .services-offered .service.mold, body .services .services-container .services-offered .service.radon {
+    width: 75%;
+  }
+}
+@media (max-width: 960px) {
+  body #hero-section .hero-section-content .image-container img {
+    width: 175px;
+  }
+  body #about-howies .about-columns {
+    flex-direction: column;
+  }
+  body .services .services-container .services-offered {
+    display: flex;
+    flex-direction: column;
+  }
+  body .services .services-container .services-offered .service.inspection, body .services .services-container .services-offered .service.mold, body .services .services-container .services-offered .service.radon {
+    width: 75%;
+  }
+  body #what-we-inspect .inspect-container {
+    width: 100%;
+  }
+  body #what-we-inspect .inspect-container .inspect-content {
+    flex-direction: column;
+  }
+  body #what-we-inspect .inspect-container .inspect-content .left-content,
+body #what-we-inspect .inspect-container .inspect-content .right-content {
+    width: 75%;
+  }
+}
+@media (max-width: 1149px) {
+  body .services .services-container .services-offered {
+    display: flex;
+    flex-direction: column;
+  }
+  body .services .services-container .services-offered .service.inspection, body .services .services-container .services-offered .service.mold, body .services .services-container .services-offered .service.radon {
+    width: 75%;
+  }
+}
+@media (max-width: 960px) {
+  body #hero-section .hero-section-content .image-container img {
+    width: 175px;
+  }
+  body #about-howies .about-columns {
+    flex-direction: column;
+  }
+  body .services .services-container .services-offered {
+    display: flex;
+    flex-direction: column;
+  }
+  body .services .services-container .services-offered .service.inspection, body .services .services-container .services-offered .service.mold, body .services .services-container .services-offered .service.radon {
+    width: 75%;
+  }
+  body #what-we-inspect .inspect-container {
+    width: 100%;
+  }
+  body #what-we-inspect .inspect-container .inspect-content {
+    flex-direction: column;
+  }
+  body #what-we-inspect .inspect-container .inspect-content .left-content,
+body #what-we-inspect .inspect-container .inspect-content .right-content {
+    width: 75%;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
