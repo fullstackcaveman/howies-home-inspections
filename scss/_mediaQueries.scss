@@ -21,6 +21,52 @@
 // Responsive menu here
 @media (max-width: 960px) {
 	body {
+		.header {
+			.navbar {
+				.nav-menu {
+					position: fixed;
+					left: -100%;
+					top: 5rem;
+					flex-direction: column;
+					background-color: #fff;
+					width: 100%;
+					border-radius: 10px;
+					text-align: center;
+					transition: 0.3s ease-in-out;
+					box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+
+					&.active {
+						left: 0;
+					}
+
+					.nav-item {
+						margin: 1rem 0;
+
+						.nav-link {
+							color: $primary-green;
+						}
+					}
+				}
+
+				.hamburger {
+					display: block;
+					cursor: pointer;
+
+					&.active {
+						.bar:nth-child(2) {
+							opacity: 0;
+						}
+						.bar:nth-child(1) {
+							transform: translateY(8px) rotate(45deg);
+						}
+						.bar:nth-child(3) {
+							transform: translateY(-8px) rotate(-45deg);
+						}
+					}
+				}
+			}
+		}
+
 		#hero-section {
 			.hero-section-content {
 				.image-container {
@@ -69,4 +115,62 @@
 	}
 }
 
-// #hero-section > div.hero-section-content > div.image-container > img
+@media (max-width: 600px) {
+	#header {
+		.navbar {
+			.logo {
+				img {
+					height: 50px;
+				}
+			}
+		}
+	}
+
+	#hero-section {
+		.hero-section-content {
+			.title {
+				h1 {
+					font-size: 2.5rem;
+				}
+			}
+
+			.sub-heading {
+				h3 {
+					font-size: 1.5rem;
+				}
+			}
+		}
+	}
+
+	footer {
+		flex-direction: column;
+	}
+}
+
+@media (max-width: 385px) {
+	#header {
+		.navbar {
+			.logo {
+				img {
+					display: none;
+				}
+			}
+		}
+	}
+
+	#hero-section {
+		.hero-section-content {
+			.title {
+				h1 {
+					font-size: 2.5rem;
+				}
+			}
+
+			.sub-heading {
+				h3 {
+					font-size: 1.5rem;
+				}
+			}
+		}
+	}
+}

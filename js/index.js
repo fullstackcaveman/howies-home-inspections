@@ -4,7 +4,7 @@ const logo = document.getElementById('logo');
 const menuLinks = document.getElementsByClassName('menu-link');
 const scrollDown = document.getElementById('scroll-down');
 const aboutHowies = document.getElementById('about-howies');
-const menuLinksArray = Array.from(document.getElementsByClassName('menu-link'));
+const menuLinksArray = Array.from(document.getElementsByClassName('nav-link'));
 const scrollTop = document.getElementById('scroll-top');
 
 window.addEventListener('scroll', (e) => {
@@ -36,6 +36,25 @@ const getMenuLinks = () => {
 };
 
 getMenuLinks();
+
+// Responsive menu
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+const navLink = document.querySelectorAll('.nav-link');
+
+hamburger.addEventListener('click', mobileMenu);
+
+function mobileMenu() {
+	hamburger.classList.toggle('active');
+	navMenu.classList.toggle('active');
+}
+
+navLink.forEach((n) => n.addEventListener('click', closeMenu));
+
+function closeMenu() {
+	hamburger.classList.remove('active');
+	navMenu.classList.remove('active');
+}
 
 scrollDown.addEventListener('click', () => {
 	aboutHowies.scrollIntoView({ behavior: 'smooth', block: 'center' });

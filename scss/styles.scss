@@ -10,6 +10,7 @@
 @import 'variables';
 
 html {
+	// width: 100%;
 	body {
 		display: flex;
 		flex-direction: column;
@@ -35,7 +36,7 @@ html {
 				background-color: rgba(0, 0, 0, 0.897);
 			}
 
-			.header-items {
+			.navbar {
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
@@ -69,14 +70,14 @@ html {
 					}
 				}
 
-				.menu {
-					.menu-items {
-						display: flex;
-						list-style-type: none;
-						padding: 0;
-						margin: 10px 0;
+				.nav-menu {
+					display: flex;
+					list-style-type: none;
+					padding: 0;
+					margin: 10px 0;
 
-						a {
+					.nav-item {
+						.nav-link {
 							color: #fff;
 							font-size: 1.2rem;
 							font-weight: bolder;
@@ -92,6 +93,24 @@ html {
 								color: $primary-green;
 							}
 						}
+					}
+
+					&.hidden {
+						display: none;
+					}
+				}
+
+				.hamburger {
+					display: none;
+
+					.bar {
+						display: block;
+						width: 25px;
+						height: 3px;
+						margin: 5px auto;
+						-webkit-transition: all 0.3s ease-in-out;
+						transition: all 0.3s ease-in-out;
+						background-color: $primary-green;
 					}
 				}
 			}
