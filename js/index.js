@@ -64,10 +64,10 @@ scrollDown.addEventListener('click', () => {
 let slideIndex = 0;
 
 const showSlides = () => {
-	let i;
+	// let i;
 	let slides = document.getElementsByClassName('slides');
 
-	for (i = 0; i < slides.length; i++) {
+	for (let i = 0; i < slides.length; i++) {
 		slides[i].style.display = 'none';
 	}
 
